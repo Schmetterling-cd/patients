@@ -1,0 +1,264 @@
+html {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: url('/resources/src/img/mainBackground.jpeg');
+}
+
+li {
+    list-style: none;
+    padding-left: 30px;
+    background-image: url('/resources/src/icons/chevron-right.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+}
+
+a:visited {
+    color: darkslategray;
+}
+
+a:hover {
+    color: brown;
+}
+
+p {
+    text-decoration: none;
+    font-size: 20px;
+
+    margin: 0 0 0 10px!important;
+}
+
+.content_container {
+    width: 90%;
+    height: 90%;
+
+    padding: 15px 30px 15px 30px;
+
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.8);
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: start;
+    align-items: center;
+}
+
+input[type=date] {
+    width: 175px;
+    height: 30px;
+
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+input[type=button] {
+    width: 200px;
+    height: 40px;
+
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    background-color: whitesmoke;
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+input[type=text] {
+    width: 200px;
+    height: 40px;
+
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    background-color: whitesmoke;
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+input[type=button]:hover {
+    background-color: orange;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    background-color: whitesmoke;
+
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.error_block {
+    position: fixed;
+    top: 20px;
+    left: 84%;
+
+    width: 300px;
+    height: 120px;
+
+    background-color: rgba(222, 122, 122, 0.74);
+    border-radius: 10px;
+
+    opacity: 0;
+    animation: ani 7s forwards;
+
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.error_header {
+    height: 30%;
+    width: 100%;
+
+    background-color: rgb(217, 73, 73);
+    border-radius: 10px 10px 0 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+}
+
+.error_header p {
+    text-decoration: none;
+    font-size: 20px;
+
+    color: #751919;
+
+    margin: 0 0 0 10px!important;
+}
+
+.error_message {
+    height: 70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    align-items: start;
+}
+
+.error_message p {
+    text-decoration: none;
+    font-size: 12px;
+
+    color: white;
+
+    word-break: break-word;
+    margin: 10px 0 0 10px!important;
+}
+
+.info_header {
+    height: 30%;
+    width: 100%;
+
+    background-color: rgb(73, 191, 217);
+    border-radius: 10px 10px 0 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    align-items: center;
+}
+
+.info_header p {
+    text-decoration: none;
+    font-size: 20px;
+
+    color: #194775;
+
+    margin: 0 0 0 10px!important;
+}
+
+.info_message {
+    height: 70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-content: center;
+    align-items: start;
+}
+
+.info_message p {
+    text-decoration: none;
+    font-size: 12px;
+
+    color: white;
+
+    word-break: break-word;
+    margin: 10px 0 0 10px!important;
+}

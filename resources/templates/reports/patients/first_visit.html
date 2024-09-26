@@ -1,0 +1,53 @@
+<div class="reports">
+  <input type="hidden" id="pageNumber" value="1">
+
+  <div class="report_header">
+    <div class="report_header_line">
+      <div class="report_header_row">
+        <label class="report_header_text" for="dateFrom">Дата начала</label>
+        <input id="dateFrom" type="date">
+      </div>
+      <div class="report_header_row">
+        <label class="report_header_text" for="dateTo">Дата окончания</label>
+        <input id="dateTo" type="date">
+      </div>
+      <div class="report_header_row">
+        <button id="getButton">Получить</button>
+      </div>
+    </div>
+    <div class="report_header_line">
+      <div class="report_header_row">
+        <button id="downloadButton">Скачать</button>
+      </div>
+      <div class="report_header_row">
+        <button id="sendButton">Получить на почту</button>
+      </div>
+      <div class="report_header_row">
+        <input type="text" id="mail" placeholder="Почта для отправки">
+      </div>
+    </div>
+  </div>
+
+  <div class="report_body" id="reportBody"></div>
+
+  <div class="report_footer" id="reportFooter">
+    <div class="report_footer_previous">
+      <input type="button" id="previousPage" value="Предыдущая">
+    </div>
+    <div class="report_footer_page">
+      <p id="page">1</p>
+      <p>из</p>
+      <p id="lastPage">1</p>
+    </div>
+    <div class="report_footer_next">
+      <input type="button" id="nextPage" value="Следующая">
+    </div>
+  </div>
+</div>
+
+<script id="patientDataTemplate" type="text/template">
+  <div class="report_card">
+    <p>Пациент: {patientId},</p>
+    <p>дата первого оплаченного посещения: {firstVisitDate}</p>
+  </div>
+</script>

@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  server:
+    container_name: server-native-php
+    image: nginx:latest
+    volumes:
+      - ./docker-data/server/nginx/conf.d:/etc/nginx/conf.d
+      - .:/var/www/html
+    ports:
+      - "127.0.0.1:80:80"
+    depends_on:
+      - translator
+  translator:
+    container_name: translator-native-php
+    build:
+      context: .
+      dockerfile: ./docker-data/images/php-mysql-xdebug/Dockerfile
+    links:
+      - database
+    working_dir: '/var/www/html'
+    volumes:
+      - ./docker-data/php/conf.d/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - .:/var/www/html
+      - ./docker-data/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    environment:
+      PHP_IDE_CONFIG: "serverName=Docker"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  database:
+    container_name: database-mysql
+    image: mysql:8.4.2
+    restart: always
+    volumes:
+      - ./database/data:/var/lib/mysql
+    environment:
+      MYSQL_USER: patients
+      MYSQL_PASSWORD: er54z4q9
+      MYSQL_ROOT_PASSWORD: er54z4q9
+      MYSQL_DATABASE: patients
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "127.0.0.1:3306:3306"

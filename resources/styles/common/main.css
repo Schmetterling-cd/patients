@@ -1,0 +1,15 @@
+.list_title {
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
+.activities_list {
+    width: 100%;
+    height: 85%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: start;
+    align-items: center;
+}
