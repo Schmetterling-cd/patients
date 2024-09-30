@@ -16,6 +16,8 @@ class FileStorageService
 		$this->_filesPath = $_SERVER['DOCUMENT_ROOT'] . static::PATH_STORAGE_FILES;
 		$this->_filesExtension = 'txt';
 
+		$this->crateDirectoryForFiles();
+
 	}
 
 	public function createFile(string $fileName = ''): string
@@ -43,6 +45,17 @@ class FileStorageService
 	{
 
 		return (bool) file_put_contents($file, $content);
+
+	}
+
+	protected function crateDirectoryForFiles(): bool
+	{
+
+		if (!is_dir($this->_filesPath)) {
+			return mkdir($this->_filesPath);
+		}
+
+		return true;
 
 	}
 

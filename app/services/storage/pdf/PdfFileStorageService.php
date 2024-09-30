@@ -17,6 +17,8 @@ class PdfFileStorageService extends FileStorageService
 		$this->_filesPath .= static::PDF_PREFIX . '/';
 		$this->_filesExtension = static::PDF_PREFIX;
 
+		$this->crateDirectoryForFiles();
+
 	}
 
 }
